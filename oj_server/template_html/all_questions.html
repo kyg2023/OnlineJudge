@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>在线OJ ‒ 题目列表</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "PingFang SC", sans-serif;
+      background: #f5f7fa;
+      color: #333;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #ffffff;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 0.8rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #2d8cf0;
+    }
+
+    .nav-left {
+      display: flex;
+      margin-left: 2rem;
+    }
+
+    .nav-left a,
+    .nav-right a {
+      margin-left: 1.5rem;
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-left a:first-child {
+      margin-left: 0;
+    }
+
+    .nav-left a:hover,
+    .nav-right a:hover {
+      color: #2d8cf0;
+    }
+
+    .nav-right {
+      display: flex;
+    }
+
+    main {
+      flex: 1;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .table-wrapper {
+      width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
+      overflow-x: auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 600px;
+    }
+
+    thead {
+      background: #2d8cf0;
+      color: white;
+    }
+
+    th, td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+
+    tbody tr:hover {
+      background: #f0f7ff;
+    }
+
+    a.title-link {
+      color: #2d8cf0;
+      text-decoration: none;
+    }
+
+    a.title-link:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: #f0f2f5;
+      padding: 1rem;
+      text-align: center;
+      color: #888;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+      thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
+      tr {
+        margin-bottom: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        padding: 0.5rem;
+      }
+      td {
+        position: relative;
+        padding-left: 50%;
+      }
+      td::before {
+        position: absolute;
+        top: 0.75rem;
+        left: 1rem;
+        width: 45%;
+        white-space: nowrap;
+        font-weight: bold;
+        content: attr(data-label);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-left">
+        <div class="logo">OJ平台</div>
+        <nav class="nav-left">
+          <a href="/">首页</a>
+          <a href="/all_questions">题库</a>
+          <a href="/">竞赛</a>
+          <a href="/">学习</a>
+          <a href="/">求职</a>
+          <a href="/">关于</a>
+        </nav>
+      </div>
+      <div class="nav-right">
+        <a href="/">登录</a>
+      </div>
+    </header>
+
+    <main>
+      <h1>题目列表</h1>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>编号</th>
+              <th>标题</th>
+              <th>难度</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#questions_list}}
+            <tr>
+              <td data-label="编号">{{id}}</td>
+              <td data-label="标题"><a class="title-link" href="/question/{{id}}">{{title}}</a></td>
+              <td data-label="难度">{{difficulty}}</td>
+            </tr>
+            {{/questions_list}}
+          </tbody>
+        </table>
+      </div>
+    </main>
+
+    <footer>
+      © 2025 我的OJ平台 - 由自己打造的算法练习空间
+    </footer>
+  </div>
+</body>
+</html>

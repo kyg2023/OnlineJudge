@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>我的OJ平台</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: "Segoe UI", "PingFang SC", sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    header {
+      background-color: #ffffff;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 0.8rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header-left {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #2d8cf0;
+    }
+
+    .nav-left {
+      display: flex;
+      margin-left: 2rem;
+    }
+
+    .nav-left a,
+    .nav-right a {
+      margin-left: 1.5rem;
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-left a:first-child {
+      margin-left: 0;
+    }
+
+    .nav-left a:hover,
+    .nav-right a:hover {
+      color: #2d8cf0;
+    }
+
+    .nav-right {
+      display: flex;
+    }
+
+    /* Main content */
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .content-box {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      padding: 3rem;
+      max-width: 800px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .content-box h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .content-box p {
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    .btn {
+      margin-top: 2rem;
+      display: inline-block;
+      background-color: #2d8cf0;
+      color: white;
+      padding: 0.8rem 1.8rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #1a73e8;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #f0f2f5;
+      padding: 1rem;
+      text-align: center;
+      color: #888;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-left">
+        <div class="logo">OJ平台</div>
+        <nav class="nav-left">
+          <a href="/">首页</a>
+          <a href="/all_questions">题库</a>
+          <a href="/">竞赛</a>
+          <a href="/">学习</a>
+          <a href="/">求职</a>
+          <a href="/">关于</a>
+        </nav>
+      </div>
+      <div class="nav-right">
+        <a href="/">登录</a>
+      </div>
+    </header>
+
+    <main>
+      <div class="content-box">
+        <h2>欢迎来到我的个人在线OJ平台</h2>
+        <p>这是一个专为算法学习和编程训练打造的在线评测平台</p>
+        <a href="/all_questions" class="btn">进入题库</a>
+      </div>
+    </main>
+
+    <footer>
+      © 2025 我的OJ平台 - 由自己打造的算法练习空间
+    </footer>
+  </div>
+</body>
+</html>
